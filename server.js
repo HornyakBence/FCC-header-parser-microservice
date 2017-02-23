@@ -1,6 +1,6 @@
 const express    = require('express');
 const app        = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 const router = express.Router();
 
 
@@ -11,7 +11,6 @@ router.get('/', function(req, res){
  var ip = req.headers['x-forwarded-for'];
  
  res.json( { 
-  message: 'yaay',
   OS: osText,
   language: langText,
   ip: ip
