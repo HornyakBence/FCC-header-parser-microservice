@@ -5,10 +5,9 @@ const router = express.Router();
 
 
 router.get('/', function(req, res){
- console.log(req);
  var osText = req.headers['user-agent'];
  var langText = req.headers['accept-language'];
- var ip = req.headers['x-forwarded-for'];
+ const ip = req.headers['x-forwarded-for'];
  
  res.json( { 
   OS: osText,
